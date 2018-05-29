@@ -70,7 +70,7 @@ spec:
         livenessProbe:
           tcpSocket:
             port: 80
-        # make our mysql pod available within the cluster on port 80
+        # make our php-dbconnect pod available within the cluster on port 80
         ports:
         - containerPort: 80
 
@@ -92,7 +92,7 @@ spec:
   - port: 80
     protocol: TCP
   selector:
-    # apply this service to the pod with the label app: mysql
+    # apply this service to the pod with the label app: php-dbconnect
     app: php-dbconnect
   # a LoadBalancer makes this service available over the public internet
   # all of our PHP/Apache pods are load balanced behind a single public network address
